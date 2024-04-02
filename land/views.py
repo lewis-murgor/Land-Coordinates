@@ -7,3 +7,7 @@ from .serializers import LandSerializer
 class LandsView(generics.ListCreateAPIView):
     queryset = Land.objects.all()
     serializer_class = LandSerializer
+
+class LandView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Land.objects.all()
+    serializer_class = LandSerializer
