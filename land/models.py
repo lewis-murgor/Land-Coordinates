@@ -4,7 +4,5 @@ from django.db import models
 class Land(models.Model):
     name = models.CharField(max_length=255)
     coordinates = models.JSONField()
+    landmark = models.CharField(max_length=255, null=True)
 
-class Landmark(models.Model):
-    name = models.CharField(max_length=255)
-    land = models.ForeignKey(Land, on_delete=models.CASCADE)
