@@ -6,3 +6,12 @@ class Land(models.Model):
     coordinates = models.JSONField()
     landmark = models.CharField(max_length=255, null=True)
 
+    def __str__(self):
+        return self.name
+    
+    def save_land(self):
+        self.save()
+
+    def delete_land(self):
+        self.delete()
+
