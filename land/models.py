@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Land(models.Model):
     name = models.CharField(max_length=255)
     coordinates = models.JSONField()
-    landmark = models.CharField(max_length=255, null=True)
+    landmark = models.CharField(max_length=255, default=None)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
@@ -17,3 +17,4 @@ class Land(models.Model):
     def delete_land(self):
         self.delete()
 
+        
