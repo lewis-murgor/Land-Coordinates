@@ -5,3 +5,4 @@ class LandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Land
         fields = '__all__'
+        read_only_fields = ["owner"]
