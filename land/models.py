@@ -17,4 +17,3 @@ class Land(models.Model):
     def delete_land(self):
         self.delete()
 
-        
