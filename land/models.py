@@ -14,7 +14,10 @@ class Land(models.Model):
         return self.name
     
     def extract_coordinate_list(self):
-        return [(point['latitude'], point['longitude']) for point in self.coordinates.values()]
+        if isinstance(self.coordinates, list):
+            return [(point['latitude'], point['longitude']) for point in self.coordinates]
+        else:
+            return [(point['latitude'], point['longitude']) for point in self.coordinates.values()]
     
     def transform_coordinates(self, coordinate_list):
         src_crs = 'EPSG:4326'
