@@ -143,5 +143,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJOSER = {
-    "USER_ID_FIELD": "username"
+    "USER_ID_FIELD": "username",
+    'SERIALIZERS': {
+        'token': 'land.serializers.CustomTokenSerializer',
+    }
 }
